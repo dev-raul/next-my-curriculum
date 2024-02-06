@@ -1,4 +1,4 @@
-import { themeDefault } from "@/theme/theme";
+import { themeDefault } from "@/styles/theme";
 import "styled-components";
 
 export type Theme = typeof themeDefault;
