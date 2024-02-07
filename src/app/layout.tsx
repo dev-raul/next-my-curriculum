@@ -1,6 +1,5 @@
 'use client'
-
-import React from 'react'
+import { ReactNode } from 'react'
 import StyledComponentsRegistry from '@/lib/registry'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from '@/styles/GlobalStyles'
@@ -10,7 +9,7 @@ import { Footer } from '@/components/Footer'
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang="en">
@@ -18,8 +17,13 @@ export default function RootLayout({
         <StyledComponentsRegistry>
           <ThemeProvider theme={themeDefault}>
             <GlobalStyles />
-            <main className="content">{children}</main>
-            <Footer />
+
+            <main className="wrapper">
+              <section className="content">
+                {children}
+                <Footer />
+              </section>
+            </main>
           </ThemeProvider>
         </StyledComponentsRegistry>
       </body>

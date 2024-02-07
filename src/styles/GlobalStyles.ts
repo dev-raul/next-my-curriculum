@@ -22,13 +22,18 @@ export const GlobalStyles = createGlobalStyle`
   .wrapper {
     display: flex;
     flex: 1;
-    height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: ${({ theme }) => theme.colors.base.minimum};
+    padding: 20px;
   }
   
   .content {
-    
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: 1024px;
+    background-color: ${({ theme }) => theme.colors.base.thin};
   }
 `
